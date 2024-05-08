@@ -13,7 +13,7 @@ const initialState: UsersState = {
   error: "",
 };
 
-const getUsers = createAsyncThunk<
+export const getUsers = createAsyncThunk<
   UserDTO[],
   undefined,
   { rejectValue: string }

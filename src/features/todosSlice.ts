@@ -13,7 +13,7 @@ const initialState: TodoState = {
   error: "",
 };
 
-const getTodos = createAsyncThunk<
+export const getTodos = createAsyncThunk<
   TodoDTO[],
   undefined,
   { rejectValue: string }
