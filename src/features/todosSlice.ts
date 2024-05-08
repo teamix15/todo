@@ -3,7 +3,7 @@ import { TodoDTO } from "../models/dto/todo.dto";
 
 interface TodoState {
   todos: TodoDTO[];
-  isLoading: false;
+  isLoading: boolean;
   error: "";
 }
 
@@ -23,7 +23,7 @@ const getTodos = createAsyncThunk<
   const response = await fetch("https://jsonplaceholder.typicode.com/todos");
 
   if (!response.ok) {
-    rejectWithValue("Parse error");
+    rejectWithValue("Error parsing todos");
   }
 
   const jsonData = await response.json();
@@ -46,8 +46,14 @@ export const todoSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getTodos.fulfilled, (state, action) => {
       state.todos = action.payload;
+      state.isLoading = false;
+    });
+
+    builder.addCase(getTodos.pending, (state) => {
+      state.isLoading = true;
+      state.error = "";
     });
   },
 });
 
-export const todoReducer =  todoSlice.reducer
+export const todosReducer = todoSlice.reducer;
