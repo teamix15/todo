@@ -40,7 +40,7 @@ const getTodos = createAsyncThunk<
 });
 
 export const todoSlice = createSlice({
-  name: "todo",
+  name: "todos",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
