@@ -1,14 +1,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { UserDTO } from "../models/dto/user.dto";
+import { UserDTO } from "../../models/dto/user.dto";
 
 interface UsersState {
-  users: UserDTO[];
+  value: UserDTO[];
   isLoading: boolean;
   error: string;
 }
 
 const initialState: UsersState = {
-  users: [],
+  value: [],
   isLoading: false,
   error: "",
 };
@@ -38,7 +38,7 @@ const usersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getUsers.fulfilled, (state, action) => {
-      state.users = action.payload;
+      state.value = action.payload;
     });
 
     builder.addCase(getUsers.pending, (state) => {
