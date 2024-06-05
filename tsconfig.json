@@ -6,6 +6,16 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    
+    "baseUrl" : "./src",
+    "paths": {
+      "@components/*": ["./components/*"],
+      "@ui/*": ["./components/common/ui/*"],
+      "@pages/*": ["./pages/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@api/*": ["./api/*"],
+      "@utils/*": ["./utils/*"],
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -23,4 +33,6 @@
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
+
+
 }
