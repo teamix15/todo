@@ -1,0 +1,17 @@
+.todoContainer {
+  display: flex;
+  border: 1px solid gray;
+  border-radius: 5px;
+  max-width: 500px;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.todoInput {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 10px;
+}

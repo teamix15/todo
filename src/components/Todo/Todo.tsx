@@ -8,9 +8,9 @@ interface TodoProps {
 export const Todo: React.FC<TodoProps> = (props) => {
 
   return (
-    <div className={styles.todo}>
+    <div className={styles.todoContainer}>
       <div className={styles.todoInput}>
-        <input type="checkbox"/>
+        <input className={styles.checkbox} type="checkbox"/>
       </div>
       <div className={styles.todoTitle}>{props.todo.title}</div>
     </div>
